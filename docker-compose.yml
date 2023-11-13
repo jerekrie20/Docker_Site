@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  flat-php-app:
+    image: website
+    container_name: website-container
+
+    volumes:
+      - .:/var/www/html
+    ports:
+      - '8080:80'
+    networks:
+      - sail
+
+networks:
+  sail:
+    external: true
+    name: admin_sail
